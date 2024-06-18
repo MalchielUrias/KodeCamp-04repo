@@ -1,0 +1,31 @@
+name: Custom CI 
+
+on: 
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: action/checkout@v4
+      - name: Display Greeting
+        run: |
+          echo "Welcome to your Github workflow"
+
+  check-directory:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: List Directories
+        run: |
+          ls -la
